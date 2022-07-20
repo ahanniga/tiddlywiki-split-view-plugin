@@ -1,0 +1,9 @@
+created: 20220719174454994
+modified: 20220719234914581
+tags: $:/tags/PageControls
+title: $:/plugins/ahanniga/toggle-split-view-button
+type: text/vnd.tiddlywiki
+
+<$button actions="<<toggle-split-view>>" tooltip="Toggle Split View" class=<<tv-config-toolbar-class>>>
+{{$:/images/fa5/solid/border-all}}
+</$button>

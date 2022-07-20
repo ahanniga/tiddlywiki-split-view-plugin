@@ -1,0 +1,9 @@
+created: 20220719184348323
+modified: 20220719234628617
+tags: $:/tags/action/split
+title: $:/plugins/ahanniga/split-view
+type: text/vnd.tiddlywiki
+
+<$fieldmangler tiddler="$:/plugins/ahanniga/storyriver/css"> 
+  <$action-sendmessage $message="tm-add-tag" $param="$:/tags/Stylesheet" />
+</$fieldmangler>
