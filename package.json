@@ -1,6 +1,6 @@
 {
   "name": "tiddlywiki-split-view-plugin",
-  "version": "0.1.0","description": "A plugin that toggles a split story view","license": "MIT",
+  "version": "0.2.0","description": "A plugin that toggles a split story view","license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/ahanniga/tiddlywiki-split-view-plugin"

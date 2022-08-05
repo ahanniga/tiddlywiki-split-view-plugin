@@ -4,18 +4,26 @@ type: application/javascript
 module-type: macro
 Toggle a $:/tags/Stylesheet tag on a CSS tiddler
 \*/
-(function() {
+(function () {
     "use strict";
+    var numChanges = 0;
     exports.name = "toggle-split-view";
     exports.params = [{}];
-    exports.run = function() {
+    exports.run = function (a, b) {
         try {
-					   if($tw.wiki.getTiddler("$:/plugins/ahanniga/storyriver/css").hasTag("$:/tags/Stylesheet")) {
-						     $tw.rootWidget.invokeActionsByTag("$:/tags/action/unsplit");
-				     } 
-				     else { 
-						     $tw.rootWidget.invokeActionsByTag("$:/tags/action/split");
-				     }
+            numChanges = $tw.saverHandler.numChanges;
+            if ($tw.wiki.getTiddler("$:/plugins/ahanniga/storyriver/css").hasTag("$:/tags/Stylesheet")) {
+                $tw.rootWidget.invokeActionsByTag("$:/tags/action/unsplit");
+            }
+            else {
+                $tw.rootWidget.invokeActionsByTag("$:/tags/action/split");
+            }
+            setTimeout(function () {
+                if (numChanges == 0) {
+                    $tw.saverHandler.numChanges = 0;
+                    $tw.saverHandler.updateDirtyStatus();
+                }
+            }, 0);
         } catch (err) {
             console.error(err.stack);
         }
